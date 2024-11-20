@@ -140,6 +140,54 @@
   </div>
 </section>
 
+<!-- Fixed Hint Box -->
+  <div id="hint-box" class="hint-box hidden">
+    <p>Click a video to view its VR version. Use the close button to exit VR mode.</p>
+  </div>
+
+  <!-- VR Preview Layer -->
+  <div id="vr-preview" class="vr-preview hidden">
+    <button id="close-vr" class="close-btn">&times;</button>
+    <video id="vr-video" controls autoplay>
+      <source src="" type="video/mp4">
+    </video>
+  </div>
+
+  <script>
+    // Show the hint box on page load
+    window.addEventListener('load', () => {
+      const hintBox = document.getElementById('hint-box');
+      hintBox.classList.remove('hidden');
+      setTimeout(() => {
+        hintBox.classList.add('hidden'); // Auto-hide hint box after 5 seconds
+      }, 5000);
+    });
+
+    // Handle video click to enter VR mode
+    document.querySelectorAll('.video-thumbnail').forEach(video => {
+      video.addEventListener('click', () => {
+        const vrSource = video.getAttribute('data-vr');
+        const vrVideo = document.getElementById('vr-video');
+        const vrPreview = document.getElementById('vr-preview');
+
+        if (vrSource) {
+          vrVideo.src = vrSource;
+          vrVideo.load();
+          vrPreview.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Handle VR close button
+    document.getElementById('close-vr').addEventListener('click', () => {
+      const vrPreview = document.getElementById('vr-preview');
+      const vrVideo = document.getElementById('vr-video');
+
+      vrVideo.pause();
+      vrPreview.classList.add('hidden');
+    });
+  </script>
+
   
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -154,18 +202,7 @@
     </div>
   </div>
 </section>
-<script>
-  // 切换到 VR 视频
-  function switchToVR(videoElement) {
-    const vrSource = videoElement.getAttribute('data-vr');
-    if (vrSource) {
-      videoElement.pause(); // 暂停当前视频
-      videoElement.src = vrSource; // 切换到 VR 视频源
-      videoElement.load(); // 加载新的视频
-      videoElement.play(); // 播放新视频
-    }
-  }
-</script>
+
 
 
 <!-- Video -->
