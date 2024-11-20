@@ -154,7 +154,18 @@
     </div>
   </div>
 </section>
-
+<script>
+  // 切换到 VR 视频
+  function switchToVR(videoElement) {
+    const vrSource = videoElement.getAttribute('data-vr');
+    if (vrSource) {
+      videoElement.pause(); // 暂停当前视频
+      videoElement.src = vrSource; // 切换到 VR 视频源
+      videoElement.load(); // 加载新的视频
+      videoElement.play(); // 播放新视频
+    }
+  }
+</script>
 
 
 <!-- Video -->
