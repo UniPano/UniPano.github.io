@@ -44,7 +44,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <img src="static/image/ico.png" alt="Icon" style="width: 10%; height: auto; margin-bottom: 20px;">
+            <img src="static/images/ico.png" alt="Icon" style="width: 10%; 
+height: auto; margin-bottom: 20px;">
             <h1 class="title is-1 publication-title">UniPano: Panoramic Video Generation with Masked Diffusion Transformer</h1>
             <div class="is-size-5 publication-authors">
                     <!-- Supplementary PDF link -->
@@ -141,17 +142,17 @@
 </section>
 
 <!-- Fixed Hint Box -->
-  <div id="hint-box" class="hint-box hidden">
+  <!-- <div id="hint-box" class="hint-box hidden">
     <p>Click a video to view its VR version. Use the close button to exit VR mode.</p>
-  </div>
+  </div> -->
 
   <!-- VR Preview Layer -->
-  <div id="vr-preview" class="vr-preview hidden">
+  <!-- <div id="vr-preview" class="vr-preview hidden">
     <button id="close-vr" class="close-btn">&times;</button>
     <video id="vr-video" controls autoplay>
       <source src="" type="video/mp4">
     </video>
-  </div>
+  </div> -->
 
   <script>
     // Show the hint box on page load
@@ -194,10 +195,10 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified"> -->
           <img src="./static/images/overview.png" alt="framework" style="width: 80%; height: auto; margin: 0 auto;">
           <p><b>Overview of UniPano.</b></p>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -210,6 +211,7 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">More Panoramic Videos</h2>
+      <center>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
@@ -233,6 +235,7 @@
           </video>
         </div>
       </div>
+      </center>
     </div>
   </div>
 </section>
